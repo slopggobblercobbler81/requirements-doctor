@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "requirements-doctor"
+version = "0.1.0"
+description = "Production-grade CLI and library to audit, lint, deduplicate, and clean requirements.txt files."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "slopggobblercobbler81", email = "slopggobblercobbler81@users.noreply.github.com" }
+]
+keywords = [
+    "requirements",
+    "pip",
+    "linter",
+    "audit",
+    "dependency",
+    "python",
+    "packaging",
+    "fixer",
+    "cli"
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Utilities"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+]
+
+[project.scripts]
+requirements-doctor = "requirements_doctor.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/slopggobblercobbler81/requirements-doctor"
+Repository = "https://github.com/slopggobblercobbler81/requirements-doctor.git"
+Issues = "https://github.com/slopggobblercobbler81/requirements-doctor/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["requirements_doctor*"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
